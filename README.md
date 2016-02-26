@@ -1,4 +1,4 @@
-# node-js-getting-started
+# Google Maps and Weather API
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
 
