@@ -25,6 +25,8 @@ app.get('/', function(request, response) {
 
 });
 
+var googleMapsApiKey = 'AIzaSyCmh_iyP9lGOmWBXFl0Z7EzUxhJjno9768'; 
+
 
 
 

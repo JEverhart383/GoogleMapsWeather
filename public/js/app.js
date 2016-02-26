@@ -21,7 +21,7 @@ app.config(["$routeProvider", "$locationProvider",
 
 .config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
-        key: 'your api key',
+        key: 'AIzaSyCmh_iyP9lGOmWBXFl0Z7EzUxhJjno9768',
         v: '3.20', //defaults to latest 3.X anyhow
         libraries: 'weather,geometry,visualization'
     });
@@ -33,7 +33,11 @@ app.controller("MapsController",['$scope', '$rootScope', '$http', 'uiGmapGoogleM
 	
 		$scope.message = "This is a really exciting message!"; 
 
+		$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+
 		uiGmapGoogleMapApi.then(function(maps) {
+
+			
 
     	
     	});
