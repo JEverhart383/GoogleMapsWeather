@@ -1,0 +1,37 @@
+<div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a ng-href="/#/dashboard">Dashboard</a></li>
+            <li role="presentation"><a href="/#/home">Auth</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">{{apiCreds.account.name}}&nbsp;<span class="label label-default">{{apiCreds.account.id}}</span></h3>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="courseName">Course ID</label>
+          <input type="text" class="form-control" id="courseName" placeholder="Course ID" ng-model="enrollmentsObject.enrollment.course_id">
+        </div>
+        
+
+        <button ng-click="createNewDevShells()" class="btn btn-default">Submit</button>
+      </form>
+
+      <div>
+        <li ng-repeat="message in errorMessages" class="alert alert-danger">
+          <p>{{message}}</p>
+        </li>
+      </div> 
+
+      <div>
+        <li ng-repeat="message in successMessages" class="alert alert-success">
+          <p>{{message}}</p>
+        </li>
+      </div>  
+
+      
+
+      <footer class="footer">
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>

@@ -1,0 +1,129 @@
+@import 'https://longwood.evaluationkit.com/CanvasScripts/longwood.css?v=1';
+/*If you change 
+
+/* Replace the gray background with something that matches your colors.  You can use .pngs with alpha transparency. If you don't use an image, you need to remove ours*/
+/* Added 1 px to height | UI fix via Canvas on 02/07/2016 */
+#header, #header.no-user { 
+  background: url("https://piedmont.longwood.edu/CanvasJS/canvas-longwood-bg.jpg") repeat-x scroll 0 0;
+  height:71px;
+  /* OR background-image: none; 
+  background-color: #EBF5FA;*/
+}
+
+
+#header-inner {
+	height:44px;
+}
+
+/*replace the canvas logo with your logo*/
+#header-logo, #header.no-user #header-logo {
+  background: url("https://piedmont.longwood.edu/CanvasJS/canvas-longwood-logo.png") no-repeat scroll 0 0;
+  width:180px;
+  height:38px;
+  left:16px;
+  bottom:12px;
+  position:absolute;
+  text-indent:-9999px
+}
+
+
+/*if you replace the left canvas logo, move a smaller one to the right side of the header--I made the image gray first*/
+#header-logo-secondary, #header.no-user #header-logo-secondary  {
+  background: url("https://piedmont.longwood.edu/CanvasJS/Canvas_byinstructure_white_web-sm.png") no-repeat scroll 0 0 transparent;
+  bottom: 8px;
+  height: 32px;
+  position: absolute;
+  right: 26px;
+  width: 135px;
+  display: block;
+}
+
+/*if your logo is bigger, you can make room like this*/
+#menu { margin-left: 220px; }
+
+/*change the identity bar (the area that says "Hilary Scharton Inbox Settings Logout Help)*/
+#identity {
+  background-image: none;
+  background-color: #A1C42E;
+}
+
+/*change the color of the identity text*/
+#identity a { color: black; }
+/*change the color of the circle around the number of unread inbox messages*/
+#identity .inbox a .unread-messages-count { background-color: #F2F0DD; }
+#identity #identity-help-container a { color: black; }
+
+/*change the color of the menu items (courses & groups etc.). If the text looks fuzzy, remove the text shadow.*/
+.menu-item .menu-item-title, .menu-item .menu-item-no-drop {
+  color: #FAFBF4;
+  text-shadow: none;
+}
+
+
+/*login box*/
+
+#modal-box.login-box {
+	background: url("canvas-longwood-login.jpg") no-repeat !important;
+}
+
+
+/*this will remove the extra canvas logo*/
+body.modal #modal-box.login-box h1 { 
+  background: none;
+  height: 235px;
+}
+
+/*resize the login box to fit my image and change the color of 'stay signed in'*/
+body.modal #modal-box.login-box { 
+  height: 435px;
+  width: 610px;
+  color: #ffffff;
+  padding:0;
+}
+
+/*change the color of the login button*/
+body.modal #modal-box .button, body.modal #login-box .button {
+  background-color: #A1C42E !important;
+  background-image: none;
+  border-color: #668F78;
+}
+
+/*change the color of 'don't know your password'*/
+body.modal #modal-box.login-box a { color: #ccc !important; }
+
+
+#identity {
+	background-color: #ddd;
+}
+
+#footer {
+	text-align:center;
+}
+
+.module_item_select {
+	max-height: 150px;
+	max-width: 300px;
+	min-height: 275px;
+	min-width: 320px;
+}
+
+/*resizes ul of user courses in admin view  */
+div.courses ul {
+    min-height: 600px !important;
+}
+
+iframe#tool_content{
+height: 500px; 
+} 
+
+/* Hide JS links at 1060 or smaller */
+
+
+@media (max-width: 1060px){
+  #library_menu_item {
+    display: none; 
+  }
+  #studentserv_menu_item {
+    display: none; 
+  }
+}

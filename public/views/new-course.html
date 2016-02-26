@@ -1,0 +1,54 @@
+<div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a ng-href="/#/dashboard">Dashboard</a></li>
+            <li role="presentation"><a href="/#/home">Auth</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">{{apiCreds.account.name}}&nbsp;<span class="label label-default">{{apiCreds.account.id}}</span></h3>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="courseName">Course Name</label>
+          <input type="text" class="form-control" id="courseName" placeholder="Intro to Canvas API" ng-model="newCourseObj.courseObj.course.name">
+        </div>
+        <div class="form-group">
+          <label for="courseCode">Course Code Base</label>
+          <input type="text" class="form-control" id="courseCode" placeholder="DEC-400" ng-model="newCourseObj.courseObj.course.course_code">
+        </div>
+        
+        <div class="form-group" ng-hide="multipleCourses===true">
+          <label for="sectionID">Section ID</label>
+          <p class="help-block">Section ID will be appended to Course Code and Course Name </p>
+          <input type="text" class="form-control" id="sectionID" placeholder="01" ng-model="section">
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input ng-click="multipleCourses = !multipleCourses" type="checkbox"> Create Multiple Courses
+          </label>
+        </div>
+        <div ng-show="multipleCourses === true">
+          <div class="form-group">
+          <label for="numberCourses">Number of Courses to Create</label>
+          <p class="help-block">Course Code will Auto-Increment</p>
+          <input type="number" class="form-control" id="numberCourses" placeholder="DEC-400-01" ng-model="numberOfCourses">
+          </div>
+        </div>
+        <button ng-click="createNewCourse()" class="btn btn-default">Submit</button>
+      </form>
+
+      <div ng-repeat="message in errorMessages" class="alert alert-danger">
+          There was an error: {{message}}
+      </div> 
+
+      <div ng-repeat="message in successMessages" class="alert alert-success">
+         <span class="glyphicon glyphicon-ok-circle"></span> Successfully created {{message.name}} with an ID of {{message.id}}! 
+      </div>  
+
+      
+
+      <footer class="footer">
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>

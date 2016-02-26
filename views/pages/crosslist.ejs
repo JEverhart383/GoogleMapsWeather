@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+
+<body>
+
+  <% include ../partials/nav.ejs %>
+
+<form action="/crosslist" method="post">
+  <label for="parent-course">Parent Course</label>
+<input type="text" name='parentCourse' class="parent-course">
+
+  <label for="child-course">Child Course</label>
+<input type="text" name='childCourse' class="child-course">
+
+<input type="submit" value="Submit" class="crosslist-submit">
+
+
+</form>
+
+
+</body>
+</html>
