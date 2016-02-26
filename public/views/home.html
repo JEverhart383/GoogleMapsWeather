@@ -29,3 +29,6 @@
 <h4>Longitude: {{currentPosition.longitude}}</h4>
 <p ng-show="errorMessage">{{errorMessage}}</p>
 
+<div class="btn btn-primary btn-block" ng-click="checkCurrentWeather()">Check Current Weather</div>
+<p ng-show="currentWeather">{{currentWeather}}</p>
+

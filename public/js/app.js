@@ -37,6 +37,25 @@ app.controller("MapsController",['$scope', '$rootScope', '$http', 'uiGmapGoogleM
 		}
 		
 			
+			$scope.checkCurrentWeather = function(){
+
+				$http.post("/checkWeather", $scope.currentPosition)
+				.success(function(data){
+					console.log(data);
+					$scope.currentWeather = data;  
+			
+				})
+				.error(function(data){
+					console.log('Error: ' + data);
+
+				});
+			}; 
+
+
+
+
+
+
 			function updateCurrentPosition(position){
 				$scope.currentPosition.latitude = position.coords.latitude; 
 				$scope.currentPosition.longitude = position.coords.longitude;

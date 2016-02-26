@@ -28,6 +28,43 @@ app.get('/', function(request, response) {
 var googleMapsApiKey = 'AIzaSyCmh_iyP9lGOmWBXFl0Z7EzUxhJjno9768'; 
 
 
+app.post('/checkWeather', function(request, response){
+	console.log(request.body); 
+	
+	var latitude = request.body.latitude; 
+	var longitude = request.body.longitude; 
+	var forecastApiKey = 'f1df3ac2596bc85d5c1cc9d1bdd13109'; 
+	var host = 'api.forecast.io'
+	var path = '/forecast/' + forecastApiKey + '/' + latitude +','+ longitude; 
+
+  		var str = '';
+  		var options = {
+		    	host: host,
+		  		path: path,
+		  		method: 'GET'
+
+		    };
+  		
+  		  var req = https.request(options, function(res){
+  			
+	  		  res.on('data', function (chunk) {
+			    	str += chunk;	
+			  });
+
+			  res.on('end', function () {
+			    	response.send(str); 
+
+			  		});
+		  }); 
+
+		  req.end(); 
+
+		  req.on('error', function(e){
+			  console.error(e);
+			});
+
+
+}); 
 
 
 app.listen(app.get('port'), function() {
