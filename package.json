@@ -1,5 +1,5 @@
 {
-  "name": "Google Maps Weather API",
+  "name": "GoogleMapsWeatherAPI",
   "version": "0.1.5",
   "description": "An interactive map using Google Maps with a Weather layer",
   "main": "index.js",

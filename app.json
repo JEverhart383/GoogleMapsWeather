@@ -1,5 +1,5 @@
 {
-  "name": "Google Maps Weather",
+  "name": "GoogleMapsWeather",
   "description": "An interactive map using Google Maps with a Weather layer",
   "repository": "https://github.com/JEverhart383/GoogleMapsWeather",
   "logo": "http://node-js-sample.herokuapp.com/node.svg",
