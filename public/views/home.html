@@ -29,6 +29,63 @@
 <h4>Longitude: {{currentPosition.longitude}}</h4>
 <p ng-show="errorMessage">{{errorMessage}}</p>
 
-<div class="btn btn-primary btn-block" ng-click="checkCurrentWeather()">Check Current Weather</div>
-<p ng-show="currentWeather">{{currentWeather}}</p>
+<div>
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Current Conditions</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Historical Farmville Weather</a></li>
+
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <br>
+            <br>
+            <div class="btn btn-primary btn-block" ng-click="checkCurrentWeather()">Check Current Weather at Current Lat/Long</div>
+            <div ng-show=""></div>
+    
+
+            <nvd3 options="currentOptions" data="currentData"> </nvd3>
+
+
+          </div>
+          <div class="col-lg-2"></div>
+
+        </div>
+      </div>
+
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <br>
+            <br>
+             
+             <div class="btn btn-primary btn-block" ng-click="getSheet()">Visualize Farmville Weather</div>
+
+            <nvd3 options="farmvilleOptions" data="farmvilleData"> </nvd3>
+
+
+          </div>
+          <div class="col-lg-2"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
 

@@ -28,6 +28,45 @@ app.get('/', function(request, response) {
 var googleMapsApiKey = 'AIzaSyCmh_iyP9lGOmWBXFl0Z7EzUxhJjno9768'; 
 
 
+app.get('/getSheet', function(request, response){
+
+	var url = 'https://docs.google.com/spreadsheets/d/1PnVsMilGyvjA-S7jzC0nL6cRy11EhIYXU-HCwLPNwVs/pub?gid=0&single=true&output=csv'
+
+	var host = 'docs.google.com'
+	var path = '/spreadsheets/d/1PnVsMilGyvjA-S7jzC0nL6cRy11EhIYXU-HCwLPNwVs/pub?gid=0&single=true&output=csv'; 
+
+  		var str = '';
+  		var options = {
+		    	host: host,
+		  		path: path,
+		  		method: 'GET'
+
+		    };
+  		
+  		  var req = https.request(options, function(res){
+  			
+	  		  res.on('data', function (chunk) {
+			    	str += chunk;	
+			  });
+
+			  res.on('end', function () {
+			    	response.send(str); 
+
+			  		});
+		  }); 
+
+		  req.end(); 
+
+		  req.on('error', function(e){
+			  console.error(e);
+			});
+
+
+
+
+}); 
+
+
 app.post('/checkWeather', function(request, response){
 	console.log(request.body); 
 	
